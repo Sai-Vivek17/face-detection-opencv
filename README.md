@@ -1,132 +1,37 @@
-Real-Time Face Detection with OpenCV
-https://img.shields.io/badge/OpenCV-5.0%252B-blue
-https://img.shields.io/badge/License-MIT-green
-https://img.shields.io/badge/C%252B%252B-17-red
+# Real-Time Face Detection with OpenCV
 
-A robust C++ implementation of real-time face detection using OpenCV's Haar Cascade classifier. Designed for both educational purposes and practical computer vision applications.
+![OpenCV Logo](https://opencv.org/wp-content/uploads/2020/07/OpenCV_logo_no_text.png)
 
-Table of Contents
-Features
+A C++ implementation of face detection using Haar Cascades in OpenCV.
 
-Installation
+## Key Features
+- Real-time detection from webcam/video
+- Haar Cascade classifier for face detection
+- Clean, commented codebase
 
-Usage
+## Project Structure
+```
+├── src/                      # Source code
+│   └── face_detector.cpp     # Main detection logic
+├── models/                   # Haar Cascade XML files
+│   ├── haarcascade_frontalcatface.xml
+│   └── haarcascade_eye_tree_eyeglasses.xml
+└── README.md                 # Documentation
+```
 
-Project Structure
-
-Technical Details
-
-Troubleshooting
-
-Future Improvements
-
-License
-
-🌟 Features
-Real-time face detection from webcam or video files
-
-Dual-classifier system (faces and eyes)
-
-Adjustable detection parameters
-
-Cross-platform compatibility
-
-Clean, well-documented codebase
-
-💻 Installation
-Prerequisites
-OpenCV 4.x or newer
-
-C++17 compatible compiler
-
-CMake 3.10+
-
-Step-by-Step Setup
-Clone the repository:
-
-bash
-git clone https://github.com/your-username/face-detection-opencv.git
-cd face-detection-opencv
-Build the project:
-
-bash
+## How It Would Work (If Configured)
+```bash
+# Theoretical build instructions
 mkdir build && cd build
-cmake ..
+cmake .. -DOpenCV_DIR=/path/to/opencv
 make
-Install OpenCV (if not installed):
-
-bash
-# Ubuntu/Debian
-sudo apt install libopencv-dev
-
-# MacOS
-brew install opencv
-🚀 Usage
-bash
-# For webcam detection (default)
 ./face_detector
+```
 
-# For video file processing
-./face_detector path/to/video.mp4
+## Future Improvements
+- [ ] Add OpenCV installation troubleshooting guide
+- [ ] Implement GPU acceleration
+- [ ] Add multi-face tracking
 
-# Command line controls:
-# Q - Quit application
-# +/- - Adjust detection scale
-📂 Project Structure
-text
-.
-├── CMakeLists.txt           # Build configuration
-├── LICENSE
-├── README.md
-├── models/                  # Haar Cascade models
-│   ├── haarcascade_eye_tree_eyeglasses.xml
-│   └── haarcascade_frontalcatface.xml
-└── src/
-    └── face_detector.cpp    # Core detection logic
-🔧 Technical Details
-Detection Pipeline
-Frame capture → Grayscale conversion → Histogram equalization
-
-Multi-scale detection using Haar features
-
-Post-processing with non-maximum suppression
-
-Visualization with bounding circles
-
-Key Parameters
-scale=1.1: Detection scale factor
-
-minNeighbors=3: Minimum neighbors for detection
-
-minSize=(30,30): Minimum object size
-
-🛠 Troubleshooting
-Common Issues
-Cascade files not found:
-
-Verify XML files are in models/ directory
-
-Use absolute paths if needed during development
-
-Webcam not opening:
-
-Check camera permissions
-
-Try different video sources (e.g., cv::VideoCapture(1))
-
-OpenCV linking errors:
-
-bash
-sudo apt install pkg-config
-pkg-config --modversion opencv4
-🚧 Future Improvements
-Implement face recognition
-
-Add GPU acceleration
-
-Develop GUI controls
-
-Support multiple face tracking
-
-📜 License
-This project is licensed under the MIT License - see the LICENSE file for details.
+## License
+MIT License - See [LICENSE](LICENSE) for details.
